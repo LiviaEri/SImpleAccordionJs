@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Simple accordion JS</title>
+    <style>
+      .accordion .item + .item {
+        margin-top: 0.5rem;
+      }
+      .accordion .control,
+      .accordion .content {
+        padding: 1rem;
+      }
+      .accordion .control {
+        cursor: pointer;
+        background: #f5f5f5;
+      }
+      .accordion .content {
+        display: none;
+      }
+      .accordion .item.open .control {
+        background: #ddd;
+      }
+      .accordion .item.open .content {
+        display: block;
+      }
+      .accordion + .accordion {
+        margin-top: 3rem;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="item">
+        <div class="control">
+          Question 1
+        </div>
+        <div class="content">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit alias at dolorem officia mollitia! Et accusantium optio odit laboriosam, quod ipsam suscipit cumque veritatis totam repellat eos possimus fuga ad.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id sit, asperiores aut totam dignissimos incidunt expedita? Repellat expedita veritatis inventore commodi ducimus sapiente saepe quis. Sed suscipit nisi nesciunt dolorum?</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="control">
+          Question 2
+        </div>
+        <div class="content">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit alias at dolorem officia mollitia! Et accusantium optio odit laboriosam, quod ipsam suscipit cumque veritatis totam repellat eos possimus fuga ad.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id sit, asperiores aut totam dignissimos incidunt expedita? Repellat expedita veritatis inventore commodi ducimus sapiente saepe quis. Sed suscipit nisi nesciunt dolorum?</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="control">
+          Question 3
+        </div>
+        <div class="content">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit alias at dolorem officia mollitia! Et accusantium optio odit laboriosam, quod ipsam suscipit cumque veritatis totam repellat eos possimus fuga ad.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id sit, asperiores aut totam dignissimos incidunt expedita? Repellat expedita veritatis inventore commodi ducimus sapiente saepe quis. Sed suscipit nisi nesciunt dolorum?</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="control">
+          Question 4
+        </div>
+        <div class="content">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit alias at dolorem officia mollitia! Et accusantium optio odit laboriosam, quod ipsam suscipit cumque veritatis totam repellat eos possimus fuga ad.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id sit, asperiores aut totam dignissimos incidunt expedita? Repellat expedita veritatis inventore commodi ducimus sapiente saepe quis. Sed suscipit nisi nesciunt dolorum?</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion">
+      <div class="item">
+        <div class="control">
+          Question 1
+        </div>
+        <div class="content">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit alias at dolorem officia mollitia! Et accusantium optio odit laboriosam, quod ipsam suscipit cumque veritatis totam repellat eos possimus fuga ad.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id sit, asperiores aut totam dignissimos incidunt expedita? Repellat expedita veritatis inventore commodi ducimus sapiente saepe quis. Sed suscipit nisi nesciunt dolorum?</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="control">
+          Question 2
+        </div>
+        <div class="content">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit alias at dolorem officia mollitia! Et accusantium optio odit laboriosam, quod ipsam suscipit cumque veritatis totam repellat eos possimus fuga ad.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id sit, asperiores aut totam dignissimos incidunt expedita? Repellat expedita veritatis inventore commodi ducimus sapiente saepe quis. Sed suscipit nisi nesciunt dolorum?</p>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // select all accordion controls
+      const controls = document.querySelectorAll(".accordion .control");
+
+      // loop through controls
+      for(let i = 0; i < controls.length; i++) {
+        // listen to click event
+        let control = controls[i];
+        control.addEventListener("click", function(e) {
+          // find current accordion item
+          let item = e.target.parentNode;
+
+          // open/close accordion item
+          item.classList.toggle("open");
+        });
+      }
+    </script>
+
+  </body>
+</html>
